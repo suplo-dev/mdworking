@@ -1,0 +1,92 @@
+@import "../fontawesome/css/all.css";
+//@import '@vuepic/vue-datepicker/dist/main.css';
+
+$primary: #003469;
+@import "bootstrap/scss/bootstrap.scss";
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+.fs-7 {
+    font-size: 0.75rem;
+}
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.flex-1 {
+    flex: 1;
+}
+
+.right-5 {
+    right: 5%;
+}
+
+.top-10 {
+    top: 10%;
+}
+
+
+@media (min-width: 992px) {
+    .position-lg-absolute {
+        position: absolute;
+    }
+    .position-lg-relative {
+        position: relative;
+    }
+    .end-lg-0 {
+        right: 0;
+    }
+}
+
+.fade-in-from-top {
+    animation: fade-in-from-top 1s ease-out forwards;
+}
+
+@keyframes fade-in-from-top {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-out {
+    animation: fade-out 1s ease-in forwards;
+}
+
+@keyframes fade-out {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+.dp__theme_light {
+    --dp-primary-color: #003469;
+}
+$form-switch-bg-custom-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='3' fill='#{$primary}'/></svg>") !default;
+$form-switch-checked-bg-custom-image:    url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='3' fill='rgba(0, 0, 0, 0.25)'/></svg>") !default;
+
+.form-check {
+    &.custom &-input {
+        background-image: escape-svg($form-switch-checked-bg-custom-image);
+    }
+    &.custom &-input:checked {
+        background-color: #007eff38;
+        background-image: escape-svg($form-switch-bg-custom-image);
+    }
+    &.custom &-input:focus {
+        border-color: $primary;
+        outline: 0;
+        box-shadow: 0 0 $input-btn-focus-blur $input-btn-focus-width rgba($primary, $input-btn-focus-color-opacity);
+
+    }
+}
